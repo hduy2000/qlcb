@@ -1,0 +1,31 @@
+ void quickSort(int* &a,int L,int R)
+ 53 {
+ 54         if(L>=R) return;
+ 55
+ 56         int i=L,j=R,k=(L+R)/2,x=a[k],tg;
+ 57
+ 58         do
+ 59         {
+ 60                 //Duyet tu trai sang phai cho toi khi gap ai>=x
+ 61                 while(a[i]<x) i++;
+ 62
+ 63                 //Duyet tu phai sang trai cho toi khi gap aj<=x
+ 64                 while(a[j]>x) j--;
+ 65
+ 66                 //Doi cho ai va aj
+ 67                 if(i<j)
+ 68                 {
+ 69                         tg=a[i];
+ 70                         a[i]=a[j];
+ 71                         a[j]=tg;
+ 72                 }
+ 73         }
+ 74         while(i<j);
+ 75
+ 76         //Phan doan ben trai
+ 77         quickSort(a,L,j-1);
+ 78
+ 79         //Phan doan ben phai
+ 80         quickSort(a,j+1,R);
+ 81 }
+recording              
